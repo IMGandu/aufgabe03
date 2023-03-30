@@ -6,13 +6,13 @@ on:
 
 jobs:
   build-and-test:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Install dependencies
         run: npm install
-      - name: Lint
+      - name: Lint test
         run: npx eslint . --fix
       - name: Test
         run: npm test
